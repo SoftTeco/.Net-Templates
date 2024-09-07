@@ -1,0 +1,1 @@
+dotnet ef database update -s .\src\API\Host\Host.csproj -p .\src\API\UserManagement\Infrastructure\Infrastructure.csproj
