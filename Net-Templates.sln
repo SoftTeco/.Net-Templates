@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\API\U
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "src\API\UserManagement\Web\Web.csproj", "{C40BE9C9-1441-479B-81CE-70FCB4CB265C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host.csproj", "src\API\Host\Host.csproj.csproj", "{6AC8F66A-D5D9-4D47-A425-50E7E8FB007B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Host.csproj", "src\API\Host\Host.csproj", "{6AC8F66A-D5D9-4D47-A425-50E7E8FB007B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E965F1E-0B4F-48EC-B0BE-494523D7B029}"
 EndProject
