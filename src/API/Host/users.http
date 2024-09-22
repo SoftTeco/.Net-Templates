@@ -1,2 +1,17 @@
-GET http://localhost:5063/api/users
+@server=localhost:5063
+
+
+GET http://{{server}}:5063/api/users
+
+###
+
+POST http://localhost:5063/api/users
+Content-Type: application/json
+
+{
+    "firstName": "John",
+    "lastName": "Dou"
+}
+
+###
 
