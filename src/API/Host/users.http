@@ -1,7 +1,7 @@
 @server=localhost:5063
 
 
-GET http://{{server}}:5063/api/users
+GET http://{{server}}/api/users
 
 ###
 
