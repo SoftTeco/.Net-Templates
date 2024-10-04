@@ -11,7 +11,7 @@ builder.Services.AddOpenTelemetry()
                 {
                     m.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService("user management"))
                     .AddMeter("Microsoft.AspNetCore.Hosting")
-                    .AddMeter("UserManagement")
+                    .AddMeter("UserManagement.Users")
                     .AddAspNetCoreInstrumentation()
                     .AddRuntimeInstrumentation()
                     .AddOtlpExporter(ex =>
