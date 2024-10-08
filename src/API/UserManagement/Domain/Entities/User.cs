@@ -1,10 +1,14 @@
-﻿namespace UserManagement.Domain.Entities;
+﻿using Domain.Entities.Common;
 
-public class User
+namespace UserManagement.Domain.Entities;
+
+public class User : BaseEntity
 {
     public Guid Id { get; set; }
 
     public string FirstName { get; set; } = null!;
 
     public string LastName { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
 }

@@ -10,7 +10,8 @@ Content-Type: application/json
 
 {
     "firstName": "John",
-    "lastName": "Dou"
+    "lastName": "Dou",
+    "email": "johndou@gmail.com"
 }
 
 ###

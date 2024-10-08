@@ -21,7 +21,13 @@ public class CreateUserHandler
     public async Task<CreateUserResponse> Handle(CreateUserRequest request, CancellationToken cancellationToken)
     {
 
-        var user = new User { Id = Guid.NewGuid(), FirstName = request.FirstName, LastName = request.LastName };
+        var user = new User
+        {
+            Id = Guid.NewGuid(),
+            FirstName = request.FirstName,
+            LastName = request.LastName,
+            Email = request.Email
+        };
 
         _usersDbContext.Users.Add(user);
         await _usersDbContext.SaveChangesAsync(cancellationToken);
