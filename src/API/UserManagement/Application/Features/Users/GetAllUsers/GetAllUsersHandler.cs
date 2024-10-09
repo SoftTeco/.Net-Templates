@@ -15,7 +15,7 @@ public class GetAllUsersHandler
 
     public async Task<IEnumerable<UserResponse>> Handle()
     {
-        return (await _usersDbContext.Users.ToListAsync()).Select(ToResponse);
+        return (await _usersDbContext.Users.Where(u => !u.IsDeleted).ToListAsync()).Select(ToResponse);
     }
 
     private UserResponse ToResponse(User user)
@@ -23,7 +23,10 @@ public class GetAllUsersHandler
         return new UserResponse
         {
             FirstName = user.FirstName,
-            LastName = user.LastName
+            LastName = user.LastName,
+            Email = user.Email,
+            CreatedAt = user.CreatedAt,
+            UpdatedAt = user.UpdatedAt,
         };
     }
 }

@@ -2,6 +2,7 @@ using UserManagement.Application.Data;
 using UserManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Infrastructure.Data.Interceptors;
 
 namespace UserManagement.Web;
 
@@ -17,6 +18,7 @@ public static class DependencyInjectionExt
         options.UseSqlServer(userManagementOptions.ConnectionString,
             builder => builder.MigrationsAssembly(typeof(UsersDbContext).Assembly.FullName)));
         services.AddScoped<IUsersDbContext>(provider => provider.GetRequiredService<UsersDbContext>());
+        services.AddScoped<EntitySaveChangesInterceptor>();
 
         // services.AddTransient<GetAllUsersHandler>();
         // services.AddTransient<CreateUserHandler>();
