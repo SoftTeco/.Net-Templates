@@ -15,7 +15,7 @@ public class GetAllUsersHandler
 
     public async Task<IEnumerable<UserResponse>> Handle()
     {
-        return (await _usersDbContext.Users.Where(u => !u.IsDeleted).ToListAsync()).Select(ToResponse);
+        return (await _usersDbContext.Users.ToListAsync()).Select(ToResponse);
     }
 
     private UserResponse ToResponse(User user)

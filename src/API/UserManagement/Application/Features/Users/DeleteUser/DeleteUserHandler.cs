@@ -16,8 +16,7 @@ public class DeleteUserHandler
 
     public async Task<OneOf<Success, NotFound>> Handle(Guid userId, CancellationToken cancellationToken)
     {
-        var user = await _usersDbContext.Users
-            .SingleOrDefaultAsync(u => u.Id == userId && !u.IsDeleted, cancellationToken);
+        var user = await _usersDbContext.Users.SingleOrDefaultAsync(u => u.Id == userId, cancellationToken);
         if (user == null)
         {
             return new NotFound();
