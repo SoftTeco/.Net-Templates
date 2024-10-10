@@ -6,7 +6,7 @@ namespace Application.Features.Users.GetAllUsers;
 
 public class GetAllUsersHandler
 {
-   private readonly IUsersDbContext _usersDbContext;
+    private readonly IUsersDbContext _usersDbContext;
 
     public GetAllUsersHandler(IUsersDbContext usersDbContext)
     {
@@ -22,6 +22,7 @@ public class GetAllUsersHandler
     {
         return new UserResponse
         {
+            Id = user.Id,
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email,
