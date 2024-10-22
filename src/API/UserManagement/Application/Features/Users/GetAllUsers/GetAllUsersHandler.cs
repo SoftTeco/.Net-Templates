@@ -6,7 +6,7 @@ namespace Application.Features.Users.GetAllUsers;
 
 public class GetAllUsersHandler
 {
-   private readonly IUsersDbContext _usersDbContext;
+    private readonly IUsersDbContext _usersDbContext;
 
     public GetAllUsersHandler(IUsersDbContext usersDbContext)
     {
@@ -15,13 +15,14 @@ public class GetAllUsersHandler
 
     public async Task<IEnumerable<UserResponse>> Handle()
     {
-        return (await _usersDbContext.Users.Where(u => !u.IsDeleted).ToListAsync()).Select(ToResponse);
+        return (await _usersDbContext.Users.ToListAsync()).Select(ToResponse);
     }
 
     private UserResponse ToResponse(User user)
     {
         return new UserResponse
         {
+            Id = user.Id,
             FirstName = user.FirstName,
             LastName = user.LastName,
             Email = user.Email,
